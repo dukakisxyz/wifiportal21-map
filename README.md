@@ -12,7 +12,7 @@ or if you are somebody looking to purchuse wifi minutes in exchange for bitcoin,
 <p>This service allows wifi sellers to register their hotspots in exchange for bitcoin.</p>
 <p>You only need to submit a description of your service (up to 120 characters) and your location data (latitude & longitude) as in the example below:</p>
 
-<pre><code>21 buy url http://10.244.183.245:5000/register/<description>/<latitude>/<longitude>/
+<pre><code>21 buy url http://10.244.183.245:5000/register/description/latitude/longitude/
 </code></pre>
 
 For example:
