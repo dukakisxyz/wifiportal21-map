@@ -3,7 +3,7 @@ This is an aggregator and map service for bitcoin payable wifi hotspots.
 
 <h3> Scope </h3>
 If you are using the 21.co bitcoin computer and [wifiportal21] (https://github.com/aantonop/wifiportal21) to sell wifi minutes for bitcoin,
-or if you are somebody looking to purchase wifi minutes in exchange for bitcoin, then the obvious question is:
+or if you are somebody looking to purchase wifi minutes in exchange for bitcoin, then the obvious questions are:
 <li> How do I inform my prospective buyers about my service? </li>
 <li> How do I know as a buyer, in which locations are such services available?</li>
 
