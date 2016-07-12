@@ -3,13 +3,16 @@ import models
 import sqlite3 as lite
 import sys
 
-app = Flask(__name__)
-app.debug = True
-
 #21 imports
 from two1.wallet import Wallet
 from two1.bitserv.flask import Payment
 import yaml
+
+app = Flask(__name__)
+payment = Payment(app, Wallet())
+app.debug = True
+
+
 
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
 @payment.required(1000)
