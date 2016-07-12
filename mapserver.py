@@ -17,7 +17,8 @@ app.debug = True
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
 @payment.required(1000)
 def register_location(description = None, latitude=None, longitude=None):
-	description = description
+    
+	description = description.replace("_", " ")
 	latitude = latitude
 	longitude = longitude
 
