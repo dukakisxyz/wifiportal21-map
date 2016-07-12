@@ -6,8 +6,8 @@ DATABASE = SqliteDatabase("locations.db")
 
 class LocationData(Model):
 	description = CharField(unique=True, max_length = 250)
-	latitude = CharField(unique=True)
-	longitude = CharField(unique=True)
+	latitude = FloatField(unique=True)
+	longitude = FloatField(unique=True)
 	registered = DateTimeField(default=datetime.datetime.now)
 
 	class Meta:
