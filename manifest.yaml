@@ -1,0 +1,17 @@
+info:
+  title: 'wifiportal21-map BETA'
+  description: 'This is an aggregator and map service for bitcoin payable wifi hotspots. Read full documentation here: http://dukakis.xyz/wifiportal21-map' 
+  x-21-quick-buy: '21 buy url http://10.244.183.245:5000/register/<description>/<latitude>/<longitude>/'
+  x-21-category: utilities
+  x-21-app-image: "https://s3.amazonaws.com/usercontent.21.co/newApp.png"
+  x-21-total-price:
+    min: 1000
+    max: 1000
+  contact:
+    name: erres
+    email: erres@tutanota.de
+host: 10.244.183.245:5000
+schemes:
+  - http
+basePath: /
+x-21-manifest-path: /manifest

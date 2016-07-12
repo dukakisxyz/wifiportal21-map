@@ -12,7 +12,7 @@ app.debug = True
 #import yaml
 
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
-@payment.required(100000)
+@payment.required(1000)
 def register_location(description = None, latitude=None, longitude=None):
 	description = description
 	latitude = latitude
