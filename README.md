@@ -16,7 +16,7 @@ or if you are somebody looking to purchase wifi minutes in exchange for bitcoin,
 </code></pre>
 
 For example:
-<pre><code>21 buy url http://10.244.183.245:5000/register/This_is_my_wifi_hotspot!_My_rates_are_100000_Satoshis_per_minute./37.4418627/-122.2130599/
+<pre><code>21 buy url http://10.244.183.245:5000/register/SSID:XXX-Verizon._My_rates_are_100000_Satoshis_per_minute./37.4418627/-122.2130599/
 </code></pre>
 
 Note that all of the underscores in the description field above, will be automatically removed and replaced with spaces in the description window for your service. 
