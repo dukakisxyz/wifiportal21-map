@@ -15,27 +15,29 @@ app.debug = True
 
 
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
-def register_location(description = None, latitude=None, longitude=None):    
-	while True:
-		try:
-			description = description.replace("_", " ")
-			latitude = float(latitude)
-			longitude = float(longitude)
+@payment.required(1000)
+def register_location(description = None, latitude=None, longitude=None):
+    try:
+        description = description.replace("_", " ")
+        latitude = float(latitude)
+        longitude = float(longitude)
 
-			models.LocationData.add_location(
-				description=description,
-				latitude=latitude,
-				longitude=longitude)
-			return redirect(url_for('payment_accepted'))
-		except ValueError:
-			return json.dumps("Something went wrong with your input and the payment was cancelled. For more information on how to form a request, see the documentation at 10.244.183.245:8000/documentation")
+        models.LocationData.add_location(
+            description=description,
+            latitude=latitude,
+            longitude=longitude)
+        
+        #return json.dumps("success")
+        return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:8000/map")
+    except ValueError:
+        return json.dumps("Value Error: Looks like this location is already registered.")
 
-
+'''
 @app.route('/get_payment')
 @payment.required(1000)
 def payment_accepted():
 	return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:8000/map")
-
+'''
 
 @app.route('/map')
 @app.route('/')
