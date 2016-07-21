@@ -18,7 +18,8 @@ app.debug = True
 @payment.required(1000)
 def register_location(description = None, latitude=None, longitude=None):
     try:
-        description = description.replace("_", " ")
+        #description = description.replace("_", " ")
+        description = description
         latitude = float(latitude)
         longitude = float(longitude)
 
