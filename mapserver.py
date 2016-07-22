@@ -13,13 +13,12 @@ payment = Payment(app, Wallet())
 app.debug = True
 
 
-
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
-@payment.required(1000)
 def register_location(description = None, latitude=None, longitude=None):
+
     try:
-        #description = description.replace("_", " ")
-        description = description
+        description = description.replace("_", " ")
+        #description = description
         latitude = float(latitude)
         longitude = float(longitude)
 
@@ -28,17 +27,15 @@ def register_location(description = None, latitude=None, longitude=None):
             latitude=latitude,
             longitude=longitude)
         
-        #return json.dumps("success")
-        return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:8000/map")
-    except ValueError:
-        return json.dumps("Value Error: Looks like this location is already registered.")
+        return redirect(url_for('payment_accepted'))
+    
+    except:
+        return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you entered. No payment has been made. For documentation visit 10.244.183.245:5000/documentation")
 
-'''
-@app.route('/get_payment')
+@app.route('/process_payment')
 @payment.required(1000)
 def payment_accepted():
-	return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:8000/map")
-'''
+    return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
 
 @app.route('/map')
 @app.route('/')
@@ -61,8 +58,9 @@ def send_the_data():
 	return json.dumps(data)
 
 @app.route('/documentation')
+@payment.required(10)
 def info():
-	return json.dumps("")
+	return json.dumps("Documentation will be available soon.")
 
 
 @app.route('/manifest')
