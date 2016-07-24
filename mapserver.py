@@ -14,6 +14,7 @@ app.debug = True
 
 
 @app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
+@payment.required(10000)
 def register_location(description = None, latitude=None, longitude=None):
 
     try:
@@ -27,16 +28,17 @@ def register_location(description = None, latitude=None, longitude=None):
             latitude=latitude,
             longitude=longitude)
         
-        return redirect(url_for('payment_accepted'))
+        #return redirect(url_for('payment_accepted'))
+        return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
     
     except:
-        return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you entered. No payment has been made. For documentation visit 10.244.183.245:5000/documentation")
-
+        return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you entered. For documentation visit 10.244.183.245:5000/documentation")
+'''
 @app.route('/process_payment')
 @payment.required(1000)
 def payment_accepted():
     return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
-
+'''
 @app.route('/map')
 @app.route('/')
 def index():
