@@ -1,6 +1,6 @@
 info:
   title: 'wifiportal21-map BETA'
-  description: 'This is an aggregator and map service for bitcoin payable wifi hotspots. Read full documentation here: http://dukakis.xyz/wifiportal21-map' 
+  description: 'This is an aggregator and map service for bitcoin payable wifi hotspots. Read full documentation at 10.244.183.245:5000/documentation'
   x-21-quick-buy: '21 buy url http://10.244.183.245:5000/register/<description>/<latitude>/<longitude>/'
   x-21-category: utilities
   x-21-app-image: "https://s3.amazonaws.com/usercontent.21.co/newApp.png"
