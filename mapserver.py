@@ -12,33 +12,24 @@ app = Flask(__name__)
 payment = Payment(app, Wallet())
 app.debug = True
 
-
-@app.route('/register/<string:description>/<string:latitude>/<string:longitude>')
+@app.route('/register', methods = ['GET', 'POST'])
 @payment.required(10000)
 def register_location(description = None, latitude=None, longitude=None):
-
     try:
-        description = description.replace("_", " ")
-        #description = description
-        latitude = float(latitude)
-        longitude = float(longitude)
+        mydata = request.json
+        description = mydata.get("description")
+        latitude = mydata.get("latitude")
+        longitude = mydata.get("longitude")
 
         models.LocationData.add_location(
             description=description,
             latitude=latitude,
             longitude=longitude)
-        
         #return redirect(url_for('payment_accepted'))
         return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
-    
     except:
         return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you entered. For documentation visit 10.244.183.245:5000/documentation")
-'''
-@app.route('/process_payment')
-@payment.required(1000)
-def payment_accepted():
-    return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
-'''
+
 @app.route('/map')
 @app.route('/')
 def index():
