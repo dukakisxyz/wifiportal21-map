@@ -9,18 +9,11 @@ or if you are somebody looking to purchase wifi minutes in exchange for bitcoin,
 
 <h3> How it works </h3>
 
-<p>This service allows wifi sellers to register their hotspots in exchange for bitcoin.</p>
-<p>You only need to submit a description of your service (up to 120 characters) and your location data (latitude & longitude) as in the example below:</p>
+<p>This service allows wifi sellers to register their hotspots in exchange for bitcoin. Currently the registration cost is at 10.000 satoshi.</p>
+<p>To register you need to run the purchase command (shown below), providing a description of your service up to 250 characters and the location’s coordinates.</p>
 
-<pre><code>21 buy url http://10.244.183.245:5000/register/description/latitude/longitude/
+<pre><code>21 buy 10.244.183.245:5000/register --data '{"description":"This is a sample description. SSID:XXX-Verizon. My rates are 0.001 BTC per minute.","latitude":"22.2722612","longitude":"114.1826218"}'
 </code></pre>
-
-For example:
-<pre><code>21 buy url http://10.244.183.245:5000/register/SSID:XXX-Verizon._My_rates_are_100000_Satoshis_per_minute./37.4418627/-122.2130599/
-</code></pre>
-
-Note that all of the underscores in the description field above, will be automatically removed and replaced with spaces in the description window for your service. 
-Generally speaking, any string argument will be accepted unless it contains spaces ( ) and dashes (/), as it will break the URL. Feel free to play around, no amount of bitcoin will be deducted from your account, unless the provided arguments are accepted! 
 
 You can view all the registered locations for free at http://10.244.183.245:5000/map 
 
