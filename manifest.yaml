@@ -1,7 +1,7 @@
 info:
   title: 'wifiportal21 Index - BETA'
   description: 'Register your 21 bitcoin payable wifi hotspot. View all locations for free on http://10.244.183.245:5000/map'
-  x-21-quick-buy: '21 buy 10.244.183.245:5000/register --data '{"description":"Your description. Include SSID and rates","latitude":"coordinates","longitude":"coordinates"}''
+  x-21-quick-buy: 'For documentation visit: http://bit.ly/2bRnQu6'
   x-21-category: utilities
   x-21-app-image: "https://s3.amazonaws.com/usercontent.21.co/newApp.png"
   x-21-total-price:

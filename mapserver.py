@@ -53,7 +53,7 @@ def send_the_data():
 @app.route('/documentation')
 @payment.required(10)
 def info():
-	return json.dumps("Documentation will be available soon.")
+	return json.dumps("For documentation visit: http://bit.ly/2bRnQu6")
 
 
 @app.route('/manifest')
