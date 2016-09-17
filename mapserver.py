@@ -56,14 +56,6 @@ def info():
 	return json.dumps("For documentation visit: http://bit.ly/2bRnQu6")
 
 
-@app.route('/manifest')
-def manifest():
-    """Provide the app manifest to the 21 crawler.
-    """
-    with open('./manifest.yaml', 'r') as f:
-        manifest = yaml.load(f)
-    return json.dumps(manifest)
-
 if __name__ == '__main__':
 	models.initialize()
     app.run(host=”::”, port=5000)
