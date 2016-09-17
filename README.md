@@ -20,3 +20,4 @@ You can view all the registered locations for free at http://[fcce:a977:ee7d:817
 <p>Requirements:</p>
 1. A  <a href="https://21.co">21 Bitcoin Computer</a> or 21 installed on AWS or MacOS
 2. You need to be connected to the 21 Network 
+3. Since the last 21 Marketplace update in order to view the map with your browser, you need to have end-to-end IPv6 connectivity or some kind of IPv6 in IPv4 encapsulation (tunnel). I am currenly working on a workaround and it will be available soon.
