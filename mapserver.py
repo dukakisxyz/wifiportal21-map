@@ -26,9 +26,9 @@ def register_location(description = None, latitude=None, longitude=None):
             latitude=latitude,
             longitude=longitude)
         #return redirect(url_for('payment_accepted'))
-        return json.dumps("Your location has been registered successfully and should be immediately available online at 10.244.183.245:5000/map")
+        return json.dumps("Your location has been registered successfully and should be immediately available online on http://[fcce:a977:ee7d:817b:3380:0000:0000:0001]:5000/map")
     except:
-        return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you entered. For documentation visit 10.244.183.245:5000/documentation")
+        return json.dumps("There was an error: Looks like this location is already registered or something went wrong with the parameters you've entered. For documentation visit http://bit.ly/2bRnQu6")
 
 @app.route('/map')
 @app.route('/')
@@ -49,11 +49,6 @@ def send_the_data():
 			
 
 	return json.dumps(data)
-
-@app.route('/documentation')
-@payment.required(10)
-def info():
-	return json.dumps("For documentation visit: http://bit.ly/2bRnQu6")
 
 
 if __name__ == '__main__':
