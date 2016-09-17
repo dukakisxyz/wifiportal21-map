@@ -12,10 +12,10 @@ or if you are somebody looking to purchase wifi minutes in exchange for bitcoin,
 <p>This service allows wifi sellers to register their hotspots in exchange for bitcoin. Currently the registration cost is at 10.000 satoshi.</p>
 <p>To register you need to run the purchase command (shown below), providing a description of your service up to 250 characters and the location’s coordinates.</p>
 
-<pre><code>21 buy 10.244.183.245:5000/register --data '{"description":"This is a sample description. SSID:XXX-Verizon. My rates are 0.001 BTC per minute.","latitude":"22.2722612","longitude":"114.1826218"}'
+<pre><code>21 buy 'http://[fcce:a977:ee7d:817b:3380:0000:0000:0001]:5000/register --data '{"description":"This is a sample description. SSID:XXX-Verizon. My rates are 0.001 BTC per minute.","latitude":"22.2722612","longitude":"114.1826218"}''
 </code></pre>
 
-You can view all the registered locations for free at http://10.244.183.245:5000/map 
+You can view all the registered locations for free at http://[fcce:a977:ee7d:817b:3380:0000:0000:0001]:5000/map 
 
 <p>Requirements:</p>
 1. A  <a href="https://21.co">21 Bitcoin Computer</a> or 21 installed on AWS or MacOS
